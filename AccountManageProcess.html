@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #1f1f7a;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #1f1f7a;
+            text-align: center;
+        }
+        .options {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .options .option {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .options .option h3 {
+            margin: 0 0 10px 0;
+            color: #1f1f7a;
+        }
+        .options .option p {
+            margin: 0 0 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #1f1f7a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #333;
+        }
+        footer {
+            text-align: center;
+            background: #1f1f7a;
+            color: #fff;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Account Management</h1>
+    </header>
+    <div class="content">
+        <h2>Manage Your Account</h2>
+        <div class="options">
+            <div class="option">
+                <h3>Update Personal Details</h3>
+                <p>Modify your name, contact number, address, or email for up-to-date information.</p>
+                <button onclick="alert('Update Personal Details')">Update Details</button>
+            </div>
+            <div class="option">
+                <h3>Change Account Preferences</h3>
+                <p>Set account preferences such as notification methods, statement frequency, and language.</p>
+                <button onclick="alert('Change Account Preferences')">Change Preferences</button>
+            </div>
+            <div class="option">
+                <h3>View Transaction History</h3>
+                <p>Access detailed records of all your transactions, including dates, amounts, and payees.</p>
+                <button onclick="alert('View Transaction History')">View History</button>
+            </div>
+            <div class="option">
+                <h3>Manage Linked Accounts</h3>
+                <p>Add or remove linked bank accounts or services like credit cards and investment accounts.</p>
+                <button onclick="alert('Manage Linked Accounts')">Manage Accounts</button>
+            </div>
+            <div class="option">
+                <h3>Change Security Settings</h3>
+                <p>Update your account's security settings, including passwords, PINs, and two-factor authentication.</p>
+                <button onclick="alert('Change Security Settings')">Update Security</button>
+            </div>
+            <div class="option">
+                <h3>Deactivate Account</h3>
+                <p>Request deactivation of your account temporarily or permanently.</p>
+                <button onclick="alert('Deactivate Account')">Deactivate</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 BFSI Blockchain Banking. All rights reserved.</p>
+    </footer>
+</body>
+</html>
