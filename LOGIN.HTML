@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Create Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('./digital-rupee-concept-technology-background_1017-36657.avif'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white; /* To make text visible on the background */
+}
+.container {
+  background-color: rgba(0, 0, 0, 0.521); /* Light transparent background for the form */
+  padding: 40px;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-left: 700px;
+}
+.container h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+.container form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.container form button {
+  padding: 15px;
+  font-size: 1.2em; /* Increased font size for the button */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.container form button:hover {
+  background-color: #0056b3;
+}
+.container .create-account {
+  text-align: center;
+  margin-top: 20px;
+}
+.container .create-account a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1em; /* Increased font size for the link */
+}
+.container .create-account a:hover {
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="container" id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="create-account">
+            <p>Don't have an account? <a href="#create-account" id="go-to-create">Create Account</a></p>
+        </div>
+    </div>
+
+    <!-- Create Account Form -->
+    <div class="container" id="create-account" style="display: none;">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+            <input type="text" id="create-username" placeholder="Username" required>
+            <input type="email" id="create-email" placeholder="Email" required>
+            <input type="password" id="create-password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="button" id="create-account-button">Create Account</button>
+        </form>
+        <div class="create-account">
+            <p>Already have an account? <a href="#login" id="go-to-login">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder for account data storage
+        const accounts = []; // This will hold created accounts as objects {email: "example@example.com", username: "user", password: "pass"}
+
+        // DOM Elements
+        const loginContainer = document.getElementById('login');
+        const createAccountContainer = document.getElementById('create-account');
+        const createAccountForm = document.getElementById('create-account-form');
+        const createAccountButton = document.getElementById('create-account-button');
+        const goToCreate = document.getElementById('go-to-create');
+        const goToLogin = document.getElementById('go-to-login');
+
+        // Show Create Account Page
+        goToCreate.addEventListener('click', function (event) {
+            event.preventDefault();
+            loginContainer.style.display = 'none';
+            createAccountContainer.style.display = 'block';
+        });
+
+        // Show Login Page
+        goToLogin.addEventListener('click', function (event) {
+            event.preventDefault();
+            createAccountContainer.style.display = 'none';
+            loginContainer.style.display = 'block';
+        });
+
+        // Handle Create Account Button Click
+        createAccountButton.addEventListener('click', function () {
+            const username = document.getElementById('create-username').value.trim();
+            const email = document.getElementById('create-email').value.trim();
+            const password = document.getElementById('create-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Check if email already exists
+            const existingAccount = accounts.find(account => account.email === email);
+            if (existingAccount) {
+                alert('This account already exists! You can login directly or create a new account with a different email.');
+                // Clear the form fields
+                createAccountForm.reset();
+                return;
+            }
+
+            // Create new account
+            accounts.push({ username, email, password });
+            alert('Account created successfully! You can now log in.');
+
+            // Switch back to Login Page
+            createAccountContainer.style.display = 'none';
+            loginContainer.style.display = 'block';
+        });
+
+        // Login form submission
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            // Check if account exists
+            const account = accounts.find(account => account.username === username);
+
+            if (!account) {
+                alert("This account doesn't exist. Please create a new account.");
+                return;
+            }
+
+            // Verify username and password
+            if (account.password !== password) {
+                alert("Incorrect Username or Password.");
+                return;
+            }
+
+            // Successful login
+            alert('Login successful! Redirecting to services...');
+            window.location.href = "services.html";
+        });
+    </script>
+    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm4tylmad0rrasvbl20lod009"></script>
+</body>
+</html>

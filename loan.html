@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./loanbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+        }
+        .foreground-image {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50%;
+            height: auto;
+            z-index: 2;
+        }
+        .content {
+            position: absolute;
+            top: 10%;
+            left: 20px;
+            z-index: 3;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 70px;
+            border-radius: 10px;
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        .custom-button {
+            position: absolute;
+            top: calc(20%);
+            right: 15%;
+            background-color: #1f2937;
+            color: #f9fafb;
+            border: 2px solid transparent;
+            border-radius: 0.5rem;
+            height: 4rem;
+            width: 16rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            z-index: 4;
+        }
+        .custom-button::before,
+        .custom-button::after {
+            content: '';
+            position: absolute;
+            border-radius: 9999px;
+            transition: all 0.5s ease;
+        }
+        .custom-button::before {
+            width: 3rem;
+            height: 3rem;
+            background-color: #a21caf;
+            right: 0.25rem;
+            top: 0.25rem;
+            z-index: 10;
+            filter: blur(1rem);
+        }
+        .custom-button::after {
+            width: 5rem;
+            height: 5rem;
+            background-color: #f43f5e;
+            right: 2rem;
+            top: 0.75rem;
+            z-index: 10;
+            filter: blur(1rem);
+        }
+        .custom-button:hover {
+            border-color: #f43f5e;
+            color: #f43f5e;
+        }
+        .custom-button:hover::before {
+            right: 3rem;
+            bottom: -2rem;
+            filter: blur(2rem);
+        }
+        .custom-button:hover::after {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="background-image" height="1080" src="/loanbg.jpg" width="1920"/>
+        <img alt="Illustration of a person sitting on stacks of coins, holding a light bulb, with a cityscape and a large smartphone in the background" class="foreground-image" height="1080" src="./download (1).png" width="960"/>
+        <div class="content">
+            <h1> Loan</h1>
+            <p>A loan is a sum of money borrowed from a lender that must be repaid with interest. Loans can be used for various purposes, including education, housing, and business needs.</p>
+            <h2>Types of Loans:</h2>
+            <ul>
+                <li><strong>Personal Loans:</strong> Unsecured loans for personal expenses.</li>
+                <li><strong>Home Loans:</strong> Mortgages for purchasing or refinancing homes.</li>
+                <li><strong>Business Loans:</strong> Funding for business operations and growth.</li>
+                <li><strong>Government Loans:</strong> Loans backed by government programs, often with favorable terms.</li>
+            </ul>
+            <h2>Eligibility Requirements:</h2>
+            <p>Varies by loan type and lender. Generally includes creditworthiness, income verification, and purpose of the loan.</p>
+            <h2>Application Process:</h2>
+            <ul>
+                <li><strong>Choose a Lender:</strong> Research and compare options.</li>
+                <li><strong>Prepare Documentation:</strong> Gather necessary financial documents.</li>
+                <li><strong>Submit Application:</strong> Complete the application process with your chosen lender.</li>
+            </ul>
+            <p><strong>Protect Yourself:</strong> Be cautious of predatory lending practices. Always read the fine print and understand the terms before signing any agreement.</p>
+            <p><strong>Learn More:</strong> For more information on loans and resources, visit <a href="https://www.sba.gov" style="color: #00f;">SBA.gov</a> or <a href="https://www.usa.gov" style="color: #00f;">USA.gov</a>.</p>
+        </div>
+        <a href="https://en.wikipedia.org/wiki/Loan" target="_blank">
+            <button class="custom-button">
+                See more
+            </button>
+        </a>
+    </div>
+</body>
+</html>

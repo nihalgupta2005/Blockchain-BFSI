@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./loanbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .foreground-image {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50%;
+            height: auto;
+            z-index: 2;
+        }
+        .content {
+            position: absolute;
+            top: 10%;
+            left: 20px;
+            z-index: 3;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 70px;
+            border-radius: 10px;
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        .custom-button {
+            position: absolute;
+            top: calc(15%); /* Adjusted to position the button a little higher */
+            right: 15%; /* Button in top-right */
+            background-color: #1f2937;
+            color: #f9fafb;
+            border: 2px solid transparent;
+            border-radius: 0.5rem;
+            height: 4rem;
+            width: 16rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            z-index: 4;
+        }
+        .custom-button::before,
+        .custom-button::after {
+            content: '';
+            position: absolute;
+            border-radius: 9999px;
+            transition: all 0.5s ease;
+        }
+        .custom-button::before {
+            width: 3rem;
+            height: 3rem;
+            background-color: #a21caf;
+            right: 0.25rem;
+            top: 0.25rem;
+            z-index: 10;
+            filter: blur(1rem);
+        }
+        .custom-button::after {
+            width: 5rem;
+            height: 5rem;
+            background-color: #f43f5e;
+            right: 2rem;
+            top: 0.75rem;
+            z-index: 10;
+            filter: blur(1rem);
+        }
+        .custom-button:hover {
+            border-color: #f43f5e;
+            color: #f43f5e;
+        }
+        .custom-button:hover::before {
+            right: 3rem;
+            bottom: -2rem;
+            filter: blur(2rem);
+        }
+        .custom-button:hover::after {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="background-image" src="/loanbg.jpg" alt="Background Image" />
+        <img alt="Illustration of a person sitting on stacks of coins, holding a light bulb, with a cityscape and a large smartphone in the background" class="foreground-image" src="./download (1).png" width="960" />
+        <div class="content">
+            <h1>Account Management</h1>
+            <p>Account management is the process of nurturing existing customer relationships to ensure satisfaction and drive growth. The goal is to retain customers, identify upsell opportunities, and enhance overall customer experience.</p>
+            <h2>Importance of Account Management:</h2>
+            <ul>
+                <li><strong>Customer Retention:</strong> Focuses on keeping existing customers satisfied and engaged.</li>
+                <li><strong>Revenue Growth:</strong> Identifies opportunities for additional sales or services.</li>
+                <li><strong>Building Relationships:</strong> Strengthens the connection between the company and its clients, fostering long-term partnerships.</li>
+            </ul>
+            <h2>Key Components of an Account Management Plan:</h2>
+            <p>It includes customer profiles, performance metrics, and strategic goals to drive results and maintain strong relationships.</p>
+            <h2>Upselling and Cross-Selling Strategies:</h2>
+            <ul>
+                <li><strong>Identifying Opportunities:</strong> Monitoring customer usage to find potential for additional sales.</li>
+                <li><strong>Value Proposition:</strong> Highlighting how our products solve specific challenges for the customer.</li>
+                <li><strong>Follow-Up:</strong> Ensuring long-term satisfaction and support beyond the initial sale.</li>
+            </ul>
+            <p><strong>Protect Yourself:</strong> Always read the fine print to avoid predatory lending practices.</p>
+            <p><strong>Learn More:</strong> Visit <a href="https://www.saleshacker.com" style="color: #00f;">Sales Hacker</a> for more resources on account management.</p>
+        </div>
+        <button class="custom-button">
+            See more
+        </button>
+    </div>
+</body>
+</html>

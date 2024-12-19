@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blockchain Banking Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: none; /* Remove direct background-image from body */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./bank2.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Apply blur effect */
+  z-index: -1;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 1; /* Ensure content is above the blurred background */
+}
+
+.container > .title {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #00C6FF; /* Gradient start */
+  background: linear-gradient(90deg, #007BFF, #00C6FF); /* Gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3); /* Add an underline effect */
+  padding-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.bank-image {
+  position: relative;
+  display: inline-block;
+}
+
+.bank-image img {
+  width: 100%;
+  max-width: 600px;
+}
+
+.login-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f0f0f0;
+  color: black;
+  font-weight: bolder;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+}
+
+.icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.icon i {
+  font-size: 1.5em;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">BlockChain Banking Platform</div>
+        <div class="subtitle">Secure, Transparent, Efficient transaction for modern banking</div>
+        <div class="bank-image">
+            <div class="img"><img src="./Bank.jpg"></div>
+            <!-- <button class="login-button"><a href="LOGIN.HTML">LOGIN</a></button> -->
+             <a href="LOGIN.HTML" ><button class="login-button">Login</button></a>
+        </div>
+    </div>
+    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm4tylmad0rrasvbl20lod009"></script>
+</body>
+</html>
